@@ -23,6 +23,8 @@ namespace AwsSQSLabs.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<SQSConfig>(Configuration.GetSection("SQSConfig"));
+            
+            services.AddSingleton<IMovieService, MovieService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
